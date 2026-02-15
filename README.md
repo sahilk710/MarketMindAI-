@@ -1,54 +1,81 @@
-# MarketResearchCrew Crew
+# MarketMindAI 🧠
 
-Welcome to the MarketResearchCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+**AI-Powered Market Research Crew**
 
-## Installation
+MarketMindAI is an intelligent agent team designed to conduct comprehensive market research, competitive analysis, and strategic planning. Built with [CrewAI](https://crewai.com), it orchestrates a team of specialized AI agents to deliver actionable business insights from a single product idea.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 🏗️ Architecture
 
-First, if you haven't already, install uv:
+![MarketMindAI Architecture](./marketmindai_architecture.png)
+
+The system employs a sequential process where agents collaborate to build a complete business report:
+
+1.  **Market Research Specialist**: Analyzes market size, growth trends, and regulatory landscape.
+2.  **Competitive Intelligence Analyst**: Identifies competitors, their strengths/weaknesses, and market positioning.
+3.  **Customer Insights Researcher**: Defines target personas, pain points, and customer segments.
+4.  **Product Strategy Advisor**: Develops MVP features, differentiation strategy, and roadmaps.
+5.  **Business Analyst**: Synthesizes all findings into a final investment-grade business report.
+
+## 🚀 Features
+
+-   **Deep Market Analysis**: TAM/SAM/SOM calculations and trend forecasting.
+-   **Competitor Deep Dives**: Detailed analysis of direct and indirect competitors.
+-   **Customer Persona Generation**: Data-driven customer profiles and journey mapping.
+-   **Strategic Roadmap**: actionable product strategy and feature prioritization.
+-   **Investment Memo Generation**: Professional business report ready for stakeholders.
+-   **Live Web Research**: Uses Serper Dev API for real-time data access.
+
+## 🛠️ Prerequisites
+
+-   **Python 3.10+**
+-   **uv** (recommended) or pip
+-   **OpenAI API Key** (for the LLM)
+-   **Serper API Key** (for Google Search capabilities)
+
+## 📦 Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/sahilk710/MarketMindAI-.git
+    cd market_research_crew
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    uv sync
+    # OR
+    pip install .
+    ```
+
+3.  **Set up environment variables:**
+    Create a `.env` file in the root directory:
+    ```env
+    OPENAI_API_KEY=sk-...
+    SERPER_API_KEY=...
+    MODEL=gpt-4.1-mini-2025-04-14  # Optional, defaults to gpt-4
+    ```
+
+## 🏃 Usage
+
+Run the crew with a single command:
 
 ```bash
-pip install uv
+crewai run
 ```
 
-Next, navigate to your project directory and install the dependencies:
+By default, the crew will research the topic defined in `src/market_research_crew/main.py`. You can modify the `inputs` dictionary in `main.py` to change the product idea:
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/market_research_crew/config/agents.yaml` to define your agents
-- Modify `src/market_research_crew/config/tasks.yaml` to define your tasks
-- Modify `src/market_research_crew/crew.py` to add your own logic, tools and specific args
-- Modify `src/market_research_crew/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+```python
+inputs = {
+    'product_idea': 'An AI-powered tool that helps summarizes youtube videos...',
+    'current_year': str(datetime.now().year)
+}
 ```
 
-This command initializes the market-research-crew Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## 📄 Output
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+The final report will be saved as `report.md` in the root directory.
 
-## Understanding Your Crew
+## 🤝 Contributing
 
-The market-research-crew Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the MarketResearchCrew Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+Contributions are welcome! Please feel free to submit a Pull Request.

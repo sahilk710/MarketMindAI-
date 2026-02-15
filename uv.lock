@@ -653,6 +653,20 @@ wheels = [
 ]
 
 [[package]]
+name = "diagrams"
+version = "0.25.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "graphviz" },
+    { name = "jinja2" },
+    { name = "pre-commit" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/49/91/af38c647ba20a7b74c23ebb0b56e000f5f8fe80fefb21251e1d0445ac5b5/diagrams-0.25.1.tar.gz", hash = "sha256:87480ba0b2d26987a69f7d553aa0cb1cebf1406adc03fef7031bdfff026bfc51", size = 33317533, upload-time = "2025-11-22T02:27:20.084Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/60/83bb3b6c9ed994e2e6829c01261b64fdcbc0b7e239434be5c417a5e05bb2/diagrams-0.25.1-py3-none-any.whl", hash = "sha256:90698eaa74c027dfffd8306ba7f08ee543959205024050a6357f34eae9961345", size = 34537406, upload-time = "2025-11-22T02:27:15.88Z" },
+]
+
+[[package]]
 name = "diskcache"
 version = "5.6.3"
 source = { registry = "https://pypi.org/simple" }
@@ -857,6 +871,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e5/7b/adfd75544c415c487b33061fe7ae526165241c1ea133f9a9125a56b39fd8/googleapis_common_protos-1.72.0.tar.gz", hash = "sha256:e55a601c1b32b52d7a3e65f43563e2aa61bcd737998ee672ac9b951cd49319f5", size = 147433, upload-time = "2025-11-06T18:29:24.087Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c4/ab/09169d5a4612a5f92490806649ac8d41e3ec9129c636754575b3553f4ea4/googleapis_common_protos-1.72.0-py3-none-any.whl", hash = "sha256:4299c5a82d5ae1a9702ada957347726b167f9f8d1fc352477702a1e851ff4038", size = 297515, upload-time = "2025-11-06T18:29:13.14Z" },
+]
+
+[[package]]
+name = "graphviz"
+version = "0.20.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip", hash = "sha256:09d6bc81e6a9fa392e7ba52135a9d49f1ed62526f96499325930e87ca1b5925d", size = 256455, upload-time = "2024-03-21T07:50:45.772Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/00/be/d59db2d1d52697c6adc9eacaf50e8965b6345cc143f671e1ed068818d5cf/graphviz-0.20.3-py3-none-any.whl", hash = "sha256:81f848f2904515d8cd359cc611faba817598d2feaac4027b266aa3eda7b3dde5", size = 47126, upload-time = "2024-03-21T07:50:43.091Z" },
 ]
 
 [[package]]
@@ -1371,6 +1394,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "crewai", extra = ["tools"] },
+    { name = "diagrams" },
     { name = "selenium" },
     { name = "webdriver-manager" },
 ]
@@ -1378,6 +1402,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "crewai", extras = ["tools"], specifier = "==1.9.3" },
+    { name = "diagrams", specifier = ">=0.25.1" },
     { name = "selenium", specifier = ">=4.40.0" },
     { name = "webdriver-manager", specifier = ">=4.0.2" },
 ]
